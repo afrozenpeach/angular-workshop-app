@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { VideoDashboardComponent } from './dashboard/video-dashboard/video-dashboard.component';
 import { VideoListComponent } from './dashboard/video-list/video-list.component';
 import { VideoPlayerComponent } from './dashboard/video-player/video-player.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { VideoPlayerComponent } from './dashboard/video-player/video-player.comp
     VideoPlayerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
