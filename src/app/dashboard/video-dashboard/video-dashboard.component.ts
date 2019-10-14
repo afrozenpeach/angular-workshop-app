@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Video } from '../../app.types';
-import { HttpClient } from '@angular/common/http';
+import { VideoService } from '../services/video.service';
 
 const videosUrl = 'https://api.angularbootcamp.com/videos';
 
@@ -15,9 +15,9 @@ export class VideoDashboardComponent implements OnInit {
   selectedVideo?: Video;
   videoData: Video[] = [];
 
-  constructor(httpClient: HttpClient) {
-    httpClient
-      .get<Video[]>(videosUrl)
+  constructor(svc: VideoService) {
+    svc
+      .loadVideos()
       .subscribe(videos => {
         this.videoData = videos;
         this.selectedVideo = this.videoData[0];
